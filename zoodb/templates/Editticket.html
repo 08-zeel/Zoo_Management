@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "Styles/Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+
+<head>
+    <style>
+        body  {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image:url("https://images.pexels.com/photos/1131454/pexels-photo-1131454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+            background-color: #cccccc;
+            height: 500px;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            position: relative;
+        }
+    </style>
+    <title> Ticket </title>
+</head>
+
+<body>
+    <left>
+        <a href="{% url 'index' %}">
+            <button class="btn btn-danger">HomePage</button>
+        </a>
+
+    </left>
+    <left>
+        <a href="{% url 'showticket' %}">
+            <button class="btn btn-info">Show Ticket</button>
+        </a>
+
+    </left>
+    <left>
+        <a href="{% url 'Insertticket' %}">
+            <button class="btn btn-warning">Insert Ticket</button>
+        </a>
+
+    </left>
+
+    <center>
+        <h1 style="color:rgb(254, 242, 6);"> Edit Zoo Records </h1>
+    </hr>    
+        <form method="POST" action="/updatezoo/{{zoo.ticket_id}}">
+            {% csrf_token%}
+
+        <table border="1" bgcolor="white">
+            <tr>
+                <td>Ticket ID</td>
+                <td><input type="text" name="ticket_id" value="{{zoo.ticket_id}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Ticket Price</td>
+                <td><input type="text" name="ticket_price" value="{{zoo.ticket_price}}"></td>
+            </tr>
+
+           
+                <td><input type="submit" value="Update Record"></td>
+                <td>
+                    {% if messages %}
+                    {% for mess in messages %}
+                    <b style="color: rgb(21, 0, 128);">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </form>
+    </center>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<head>
+    <style>  
+        body  {  
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image:url("https://images.pexels.com/photos/1131454/pexels-photo-1131454.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");  
+            background-color: #eb0b0b;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Roboto Condensed', sans-serif;
+            background-size: cover;
+            position: relative;
+        }  
+    </style>  
+    <title> Zoo Management </title>
+</head>
+
+<body style ="margin-top: 40px;">
+    <left style="margin-left: 40px; margin-top: 40px;">
+        <a href="{% url 'index' %}">
+            <!-- <button class="btn btn-outline-primary">Insert club</button> -->
+            <button type="button" class="btn btn-danger" style="font-size: 1.25rem; color: #ffffff; font-weight: 700;">Home Page</button>
+        </a>
+
+    </left>
+    <left style="margin-left: 40px; margin-top: 40px;">
+        <a href="{% url 'showzoo' %}">
+            <!-- <button class="btn btn-outline-primary">Insert club</button> -->
+            <button type="button" class="btn btn-info" style="font-size: 1.25rem; color: #0a202d; font-weight: 700;">Show Zoo</button>
+        </a>
+
+    </left >
+    <right >
+        <a style="float: right; margin-right: 40px;"href="InsertZoo">
+            <button class="btn btn-warning" style="font-size: 1.25rem; color: #0a202d; font-weight: 700;">Insert Zoo</button>
+        </a>
+    </right>
+    <hr>
+    <center>
+        <h1 style="font-size: 4rem;;color:red;"> Deleted Successfully </h1>
+    </hr>
+
+        <!-- <form method="POST" action="/Deletezoo/{{zoo.zoo_id}}">
+            {% csrf_token%}
+        <table border="1" bgcolor="lightblue">
+            <tr>
+                <td>Zoo ID</td>
+                <td><input type="text" name="zoo_id" value="{{zoo.zoo_id}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Zoo Name</td>
+                <td><input type="text" name="zoo_name" value="{{zoo.zoo_name}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>State</td>
+                <td><input type="text" name="state" value="{{zoo.state}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Pincode</td>
+                <td><input type="text" name="pincode" value="{{zoo.pincode}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Ticket ID</td>
+                <td><input type="text" name="ticket_id" value="{{zoo.ticket_id}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>Hospital ID</td>
+                <td><input type="text" name="hospital_id" value="{{zoo_hospital_id}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Delete Record"></td>
+                <td>
+                    {% if messages %}
+                    {% for mess in messages %}
+                    <b style="color: red;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </form> -->
+    </center>
+</body>
+</html>

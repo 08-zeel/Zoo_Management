@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel = "stylesheet" href = "Styles/Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Lato:ital,wght@1,700&family=Poppins:wght@800&display=swap" rel="stylesheet">
+<head>
+    <style>
+        body  {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image:url("https://img.freepik.com/premium-vector/cartoon-illustration-background-forest-glade-bright-wood-with-butterflies-design-game-websites-mobile-phones-printing_284645-1089.jpg?w=826");
+              background-color: #e72faa;
+            height: 500px;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            position: relative;
+        }
+        td {
+            text-align: center;
+        }
+    </style>
+    <title> Ticket </title>
+</head>
+
+<body>
+    <left>
+        <a href="{% url 'index' %}">
+        <button class="btn btn-danger">HomePage</button>
+        </a>
+
+    </left>
+    <left>
+        <a href="{% url 'showticket' %}">
+        <button class="btn btn-info">Show Ticket</button>
+        </a>
+
+    </left>
+    <left>
+        <a href="{% url 'Insertticket' %}">
+        <button class="btn btn-warning" >Insert Ticket</button>
+        </a>
+
+    </left>
+
+    <center>
+        <h1 style="color:#e72faa;"> Show Ticket Details </h1>
+    </hr>
+</hr>
+        <table border="1" bgcolor="white">
+            <tr>
+                <th> Ticket ID </th>
+                <th> Ticket Price </th>
+                
+            {% for result in data %}
+            <tr>
+                <td> {{result.0}}</td>
+                <td> {{result.1}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
